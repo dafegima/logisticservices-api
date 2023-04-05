@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Endpoints\Trucks\" />
+    <None Remove="Endpoints\Services\" />
+    <None Remove="MediatR" />
+    <None Remove="MediatR.Extensions.Microsoft.DependencyInjection" />
+    <None Remove="ExceptionHandler\" />
+    <None Remove="Models\" />
+    <None Remove="Swashbuckle.AspNetCore" />
+    <None Remove="Swashbuckle.AspNetCore.Annotations" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Endpoints\Trucks\" />
+    <Folder Include="Endpoints\Services\" />
+    <Folder Include="ExceptionHandler\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.3.1" />
+    <PackageReference Include="MediatR" Version="10.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LogisticService.Application\LogisticService.Application.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\LogisticService.Domain\LogisticService.Domain.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\LogisticService.Infrastructure.SQL\LogisticService.Infrastructure.SQL.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
