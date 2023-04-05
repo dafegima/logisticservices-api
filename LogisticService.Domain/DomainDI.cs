@@ -13,7 +13,9 @@ public static class DomainDI
         services.AddTransient<IDeleteTruckUseCase, DeleteTruckUseCase>();
         services.AddTransient<IUpdateTruckUseCase, UpdateTruckUseCase>();
         services.AddTransient<IGetTrucksUseCase, GetTrucksUseCase>();
+        services.AddTransient<IGetTruckByIdUseCase, GetTruckByIdUseCase>();
         services.AddTransient<ICreateServiceUseCase, CreateServiceUseCase>();
+        services.AddTransient<IGetAllServicesUseCase, GetAllServicesUseCase>();
         return services;
     }
 }

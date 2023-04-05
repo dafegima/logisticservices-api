@@ -10,10 +10,10 @@ namespace LogisticService.API.Endpoints.Services
     [Route("api/services")]
     [Produces("application/json")]
     [ApiController]
-    public class StopServiceEndpoint : Controller
+    public class CreateServiceEndpoint : Controller
 	{
         private readonly IMediator _mediator;
-		public StopServiceEndpoint(IMediator mediator)
+		public CreateServiceEndpoint(IMediator mediator)
 		{
             _mediator = mediator;
 		}

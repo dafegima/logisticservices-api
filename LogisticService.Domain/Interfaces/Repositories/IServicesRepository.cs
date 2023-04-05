@@ -6,6 +6,7 @@ namespace LogisticService.Domain.Interfaces.Repositories
     {
         ServiceEntity Add(ServiceEntity service);
         ServiceEntity GetActiveServiceByLicensePlate(string licensePlate);
+        IEnumerable<ServiceEntity> GetAll();
         ServiceEntity GetAssignedServiceByLicensePlate(string licensePlate);
     }
 }

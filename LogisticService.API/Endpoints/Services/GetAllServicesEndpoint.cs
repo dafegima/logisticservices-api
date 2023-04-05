@@ -1,22 +1,20 @@
 ﻿using System;
 using System.Net;
-using LogisticService.Application.Queries.Trucks.GetAll;
+using LogisticService.Application.Queries.Services.GetAll;
 using MediatR;
-using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace LogisticService.API.Endpoints.Trucks
 {
-    [EnableCors("CorsPolicy")]
-    [Tags("Trucks")]
-    [Route("api/trucks")]
+    [Tags("Services")]
+    [Route("api/services")]
     [Produces("application/json")]
     [ApiController]
-    public class GetAllTrucksEndpoint : Controller
+    public class GetAllServicesEndpoint : Controller
 	{
-        private readonly IMediator _mediator;
-        public GetAllTrucksEndpoint(IMediator mediator)
+		private readonly IMediator _mediator;
+        public GetAllServicesEndpoint(IMediator mediator)
         {
             _mediator = mediator;
         }
@@ -26,7 +24,7 @@ namespace LogisticService.API.Endpoints.Trucks
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var result = await _mediator.Send(new GetAllTrucksQuery());
+            var result = await _mediator.Send(new GetAllServicesQuery());
             if (result.Any())
                 return Ok(result);
                 

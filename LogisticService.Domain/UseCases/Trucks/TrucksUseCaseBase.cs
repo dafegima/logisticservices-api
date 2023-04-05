@@ -1,3 +1,4 @@
+using LogisticService.Domain.Entities;
 using LogisticService.Domain.Interfaces.Repositories;
 
 namespace LogisticService.Domain.UseCases.Trucks
@@ -11,7 +12,11 @@ namespace LogisticService.Domain.UseCases.Trucks
         }
 
         public bool TruckExist(string licensePlate){
-            return _trucksRepository.GetByLicensePlate(licensePlate) is not null;
+            return GetTruckByLicensePlate(licensePlate) is not null;
+        }
+
+        public TruckEntity GetTruckByLicensePlate(string licensePlate){
+            return _trucksRepository.GetByLicensePlate(licensePlate);
         }
     }
 }

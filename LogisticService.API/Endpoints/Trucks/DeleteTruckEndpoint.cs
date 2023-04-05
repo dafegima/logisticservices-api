@@ -2,11 +2,13 @@
 using System.Net;
 using LogisticService.Application.Commands.Trucks.Delete;
 using MediatR;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace LogisticService.API.Endpoints.Trucks
 {
+    [EnableCors("CorsPolicy")]
     [Tags("Trucks")]
     [Route("api/trucks")]
     [Produces("application/json")]

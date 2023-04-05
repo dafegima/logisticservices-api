@@ -40,5 +40,12 @@ namespace LogisticService.Infrastructure.SQL.Repositories
             ServiceEntity service = Query<ServiceEntity>(sqlQuery.ToString(), new {LicensePlate = licensePlate, Status = status}).FirstOrDefault();
             return service;
         }
+
+        public IEnumerable<ServiceEntity> GetAll()
+        {
+            StringBuilder sqlQuery = new StringBuilder();
+            sqlQuery.Append("SELECT * FROM Services");
+            return Query<ServiceEntity>(sqlQuery.ToString());
+        }
     }
 }

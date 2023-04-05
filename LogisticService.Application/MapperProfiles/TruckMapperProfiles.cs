@@ -2,6 +2,7 @@ using AutoMapper;
 using LogisticService.Application.Commands.Trucks.Create;
 using LogisticService.Application.Commands.Trucks.Update;
 using LogisticService.Application.Queries.Trucks.GetAll;
+using LogisticService.Application.Queries.Trucks.GetById;
 using LogisticService.Domain.Entities;
 
 namespace LogisticService.Application.MapperProfiles
@@ -15,6 +16,7 @@ namespace LogisticService.Application.MapperProfiles
             CreateMap<UpdateTruckCommand, TruckEntity>();
             CreateMap<TruckEntity, UpdateTruckCommandResponse>();
             CreateMap<TruckEntity, GetAllTrucksQueryResponse>();
+            CreateMap<TruckEntity, GetTruckByIdQueryResponse>();
         }
     }
 }

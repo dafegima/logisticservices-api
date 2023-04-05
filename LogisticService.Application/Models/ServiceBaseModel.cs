@@ -10,5 +10,6 @@ namespace LogisticService.Application.Models
         public string Destination { get; set; }
         public double DestinationLatitude { get; set; }
         public double DestinationLongitude { get; set; }
+        public string Status { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 using AutoMapper;
 using LogisticService.Application.Commands.Services.Create;
+using LogisticService.Application.Queries.Services.GetAll;
 using LogisticService.Domain.Entities;
 
 namespace LogisticService.Application.MapperProfiles
@@ -10,6 +11,7 @@ namespace LogisticService.Application.MapperProfiles
         {
             CreateMap<ServiceEntity, CreateServiceCommandResponse>();
             CreateMap<CreateServiceCommand, ServiceEntity>();
+            CreateMap<ServiceEntity, GetAllServicesQueryResponse>();
         }   
     }
 }
